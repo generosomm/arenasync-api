@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArenaSync | Tournament Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <h1>ARENA<span class="highlight">SYNC</span></h1>
+        <p>Esports Tournament Manager</p>
+    </nav>
+
+    <div class="container">
+        <section class="form-panel">
+            <h2>🏆 Host a Tournament</h2>
+            <form id="tournamentForm">
+                <div class="input-group">
+                    <label>Tournament Name</label>
+                    <input type="text" id="tName" placeholder="e.g. Valorant City Cup" required>
+                </div>
+                <div class="input-group">
+                    <label>Banner Image URL</label>
+                    <input type="text" id="tBanner" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="input-group">
+                    <label>Max Teams</label>
+                    <input type="number" id="tMax" placeholder="16">
+                </div>
+
+                <div class="input-group">
+                    <label>Description / Rules</label>
+                    <textarea id="tDesc" rows="3" placeholder="Rules of the tournament..."></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label>Game Title</label>
+                    <select id="tGame">
+                        <option value="Call of Duty: Mobile">Call of Duty: Mobile</option>
+                        <option value="Valorant">Valorant</option>
+                        <option value="Mobile Legends">Mobile Legends</option>
+                        <option value="League of Legends">League of Legends</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Prize Pool (PHP)</label>
+                    <input type="number" id="tPrize" placeholder="15000" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Format</label>
+                    <select id="tFormat">
+                        <option value="Single Elimination">Single Elimination</option>
+                        <option value="Double Elimination">Double Elimination</option>
+                        <option value="Round Robin">Round Robin</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Start Date</label>
+                    <input type="datetime-local" id="tDate" required>
+                </div>
+
+                <button type="submit">CREATE TOURNAMENT</button>
+            </form>
+        </section>
+
+        <section class="feed-panel">
+            <h2>🔴 Live Tournaments</h2>
+            <div id="tournamentGrid" class="grid">
+                <p class="loading">Fetching data...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
