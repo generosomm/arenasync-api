@@ -2,7 +2,7 @@
 **Group 5**
 
 ## Group Members
-1. Generoso, Merwi
+1. Generoso, Merwin
 2. Corales, Zedryl Hershey
 3. Diaz, Lashawn Railey
 
