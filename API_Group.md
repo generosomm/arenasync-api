@@ -1,5 +1,4 @@
 # ArenaSync API - Final Project Submission
-**Group 5**
 
 ## Group Members
 1. Generoso, Merwin
