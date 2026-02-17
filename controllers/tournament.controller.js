@@ -1,7 +1,10 @@
+// Import Tournament model
 const Tournament = require('../models/tournament.model');
 
-exports.getAllTournaments = async (req, res) => {
+
+const getAllTournaments = async (req, res) => {
     try {
+        // Get all tournaments from the model
         const tournaments = await Tournament.getAll();
         res.json(tournaments);
     } catch (error) {
@@ -9,8 +12,9 @@ exports.getAllTournaments = async (req, res) => {
     }
 };
 
-exports.getTournamentById = async (req, res) => {
+const getTournamentById = async (req, res) => {
     try {
+        // Get tournament by ID from the model
         const tournament = await Tournament.getById(req.params.id);
         if (!tournament) return res.status(404).json({ message: 'Tournament not found' });
         res.json(tournament);
@@ -19,17 +23,8 @@ exports.getTournamentById = async (req, res) => {
     }
 };
 
-exports.createTournament = async (req, res) => {
-    try {
-        if (!req.body.name || !req.body.game_title) {
-            return res.status(400).json({ message: "Name and Game Title are required" });
-        }
-        const newId = await Tournament.create(req.body);
-        res.status(201).json({ 
-            message: 'Tournament created successfully', 
-            tournament_id: newId 
-        });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+module.exports = {
+    getAllTournaments,
+    getTournamentById
 };
+
