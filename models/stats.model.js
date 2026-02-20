@@ -9,7 +9,7 @@ const getTotals = async () => {
 };
 
 const getLeaderboard = async () => {
-    const [rows] = await db.query('SELECT name AS team_name, wins, losses FROM teams ORDER BY wins DESC, losses ASC LIMIT 5');
+    const [rows] = await db.query('SELECT DISTINCT name AS team_name, wins, losses FROM teams ORDER BY wins DESC, losses ASC LIMIT 5');
     return rows;
 };
 

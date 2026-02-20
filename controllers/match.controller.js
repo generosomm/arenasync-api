@@ -4,7 +4,7 @@ const Match = require('../models/match.model');
 const getAllMatches = async (req, res) => {
     try {
         // Get all matches from the model
-        const matches = await Match.getAll();
+        const matches = await Match.getAllMatches();
         res.json({
             success: true,
             count: matches.length,

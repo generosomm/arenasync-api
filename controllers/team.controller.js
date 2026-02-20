@@ -4,7 +4,7 @@ const Team = require('../models/team.model');
 const getAllTeams = async (req, res) => {
     try {
         // Get all teams from the model
-        const teams = await Team.getAll();
+        const teams = await Team.getAllTeams();
         res.json({
             success: true,
             count: teams.length,
